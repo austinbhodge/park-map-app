@@ -1,0 +1,12 @@
+<div fxLayout="column" fxFlex="100">
+  <div fxLayout="row" fxFlex="100" fxFlex.lt-sm="40">
+      <app-park-map fxFlex="70" fxFlex.lt-sm="100" [parkPins]="mapPins"></app-park-map>
+      <app-park-map-list fxFlex="30" fxHide.lt-sm [parkList]="parkList"></app-park-map-list>
+  </div>
+
+  <div fxLayout="row" fxHide.gt-xs  fxFlex.lt-sm="60">
+      <app-park-map-list fxFlex="100" [parkList]="parkList"></app-park-map-list>
+  </div>
+
+</div>
+
