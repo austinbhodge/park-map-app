@@ -1,0 +1,12 @@
+<mgl-map
+[style]="'mapbox://styles/austinbhodge/cjswvss5i6a6u1fo3tklt3k1b'"
+[zoom]="[3]"
+[center]="[-100, 35]">
+
+  <mgl-marker *ngFor="let pin of parkPins"
+              [lngLat]="[pin.long, pin.lat]">
+    <div class="marker">
+      <fa name="map-marker"></fa>
+    </div>
+  </mgl-marker>
+</mgl-map>

@@ -1,0 +1,23 @@
+:host {
+	overflow-y: scroll;
+}
+
+.park-list-item {
+	padding: 0.5rem;
+	border: solid 1px #bbbbbb;
+	border-bottom: none;
+
+	h5 {
+		font-size: 1.2rem;
+	}
+
+	hr {
+		margin: 0.5rem 0;
+	}
+
+	.designation {
+		font-size: 0.8rem;
+		margin: 0;
+		color: #bbbbbb;
+	}
+}

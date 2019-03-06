@@ -1,0 +1,25 @@
+<div *ngFor="let park of parkList" class="park-list-item">
+  <h5>{{ park.name }}</h5>
+  <p class="designation" *ngIf="park.designation">
+    <fa name="tree"></fa>
+    {{ park.designation }}
+  </p>
+
+  <p class="designation" *ngIf="!park.designation">
+    <fa name="question"></fa>
+     No Designation
+  </p>
+
+  <hr>
+
+  <a [href]="park.url" class="mr-2" target="blank">
+    <button class="btn btn-primary btn-sm">
+      <fa name="external-link"></fa>
+    </button>
+  </a>
+
+  <button class="btn btn-sm">
+    <fa name="map-marker"></fa>
+  </button>
+
+</div>
