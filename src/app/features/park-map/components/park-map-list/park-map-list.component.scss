@@ -7,17 +7,10 @@
 	border: solid 1px #bbbbbb;
 	border-bottom: none;
 
-	h5 {
-		font-size: 1.2rem;
-	}
-
-	hr {
-		margin: 0.5rem 0;
-	}
-
-	.designation {
-		font-size: 0.8rem;
-		margin: 0;
-		color: #bbbbbb;
+	&:hover {
+		background: #b4d4ff;
+		cursor: pointer;
+		border: solid 1px #5982b8;
+		border-bottom: none;
 	}
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
 import { ParkMapModule } from './features';
+import { ParkMapResolve } from './features/park-map/park-map.resolve';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { ParkMapModule } from './features';
     ParkMapModule,
     SharedModule
   ],
-  providers: [],
+  providers: [ParkMapResolve],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

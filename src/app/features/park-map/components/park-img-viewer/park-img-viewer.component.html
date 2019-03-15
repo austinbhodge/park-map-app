@@ -1,0 +1,14 @@
+<div fxLayout="row" fxFlex="100" class="img-carousel-containter">
+
+
+
+<ngb-carousel>
+    <ng-template ngbSlide *ngFor="let img of parkImages" >
+      <img [src]="img.url" width="100%" alt="Random first slide">
+      <div class="carousel-caption">
+        <h3>{{ img.title }}</h3>
+        <p>{{ img.caption }}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

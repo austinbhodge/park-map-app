@@ -1,25 +1,12 @@
-<div *ngFor="let park of parkList" class="park-list-item">
-  <h5>{{ park.name }}</h5>
-  <p class="designation" *ngIf="park.designation">
-    <fa name="tree"></fa>
-    {{ park.designation }}
-  </p>
 
-  <p class="designation" *ngIf="!park.designation">
-    <fa name="question"></fa>
-     No Designation
-  </p>
 
-  <hr>
+<div *ngIf="state.$activePark | async" fxLayout="row wrap">
+  <app-park-list-card fxFlex="100" class="park-list-item" [park]="state.$activePark | async"></app-park-list-card>
+  <app-park-img-viewer fxFlex="100" [parkImages]="(state.$activePark | async).images"></app-park-img-viewer>
+</div>
 
-  <a [href]="park.url" class="mr-2" target="blank">
-    <button class="btn btn-primary btn-sm">
-      <fa name="external-link"></fa>
-    </button>
-  </a>
-
-  <button class="btn btn-sm">
-    <fa name="map-marker"></fa>
-  </button>
-
+<div *ngIf="!(state.$activePark | async)">
+  <div *ngFor="let park of parkList" class="park-list-item">
+    <app-park-list-card [park]="park"></app-park-list-card>
+  </div>
 </div>

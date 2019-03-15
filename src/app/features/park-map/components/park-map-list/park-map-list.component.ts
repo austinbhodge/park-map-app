@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ParkMapStateService } from '../../services';
 
 @Component({
   selector: 'app-park-map-list',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ParkMapListComponent implements OnInit {
   @Input() parkList = [];
 
-  constructor() { }
+  constructor(public state: ParkMapStateService) { }
 
   ngOnInit() {
   }

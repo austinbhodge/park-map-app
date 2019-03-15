@@ -1,0 +1,31 @@
+<div (click)="setActivePark()" class="park-list-card" fxLayout fxFlex="100" fxLayoutGap="10px">
+  <img *ngIf="park.images.length" fxFlex="50px" height="50px" width="50px" class="img rounded-circle" [src]="park.images[0].url">
+
+  <img *ngIf="!park.images.length" fxFlex="50px" height="50px" width="50px" class="img rounded-circle">
+
+  <div fxFlex="calc(100% - 50px)" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
+  <p fxFlex="20px" class="card-title">{{ park.name | ellipsis: 25 }}</p>
+
+  <p class="designation" *ngIf="park.designation">
+    <i class="fas fa-{{getIcon(park.designation)}}"></i>
+    {{ park.designation | ellipsis: 30 }}
+  </p>
+
+  <p class="designation" *ngIf="!park.designation">
+    <i class="fas fa-flag-usa"></i>
+    No Designation
+  </p>
+  </div>
+  <hr>
+
+  <!-- <a [href]="park.url" class="mr-2" target="blank">
+    <button class="btn btn-primary btn-sm">
+      <fa name="external-link"></fa>
+    </button>
+  </a>
+
+  <button class="btn btn-sm" (click)="setActivePark()">
+    <fa name="map-marker"></fa>
+  </button> -->
+
+</div>

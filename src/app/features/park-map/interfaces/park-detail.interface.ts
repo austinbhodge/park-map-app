@@ -1,0 +1,3 @@
+interface IParkDetail {
+    name: string;
+}
