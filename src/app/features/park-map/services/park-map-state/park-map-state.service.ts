@@ -8,7 +8,7 @@ interface IPark {
   name: string;
   id: string;
   designation: string;
-  latLong: string;
+  latlong: string;
   latitude: number;
   longitude: number;
 }
@@ -44,11 +44,14 @@ export class ParkMapStateService extends StateService {
     .pipe(map(parks => {
       const parkMap = [];
       for (const park of parks) {
-        if (park.latLong.length) {
-          const parkLocation = park.latLong.split(',');
-          park.latitude = parseFloat(parkLocation[0].split(':')[1]);
-          park.longitude = parseFloat(parkLocation[1].split(':')[1]);
-          parkMap.push(park);
+        console.log(park);
+        if (park) {
+          if (park && park.latlong.length) {
+            const parkLocation = park.latlong.split(',');
+            park.latitude = parseFloat(parkLocation[0].split(':')[1]);
+            park.longitude = parseFloat(parkLocation[1].split(':')[1]);
+            parkMap.push(park);
+          }
         }
       }
 
@@ -59,7 +62,7 @@ export class ParkMapStateService extends StateService {
     .pipe(map(parks => {
       const mapPins = [];
       for (const park of parks) {
-        if (park.latLong.length) {
+        if (park.latlong.length) {
           mapPins.push({lat: park.latitude, long: park.longitude, id: park.id, name: park.name});
         }
       }
