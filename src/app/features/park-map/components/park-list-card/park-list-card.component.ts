@@ -30,7 +30,7 @@ export class ParkListCardComponent implements OnInit {
     this.state.set('activePark', this.park);
     console.log(this.park);
     this.state.set('mapCenter', [this.park.longitude, this.park.latitude]);
-    this.state.set('mapZoom', [12]);
+    this.state.set('mapZoom', [11]);
   }
 
   getIcon(designation) {

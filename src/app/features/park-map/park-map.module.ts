@@ -13,17 +13,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { ParkDetailComponent } from './components/park-detail/park-detail.component';
 import { ParkMapResolve } from './park-map.resolve';
 import { ParkListCardComponent } from './components/park-list-card/park-list-card.component';
-import { ParkFilterComponent } from './components/park-filter/park-filter.component';
-import { ParkImgViewerComponent } from './components/park-img-viewer/park-img-viewer.component';
-import { ParkSearchComponent } from './components/park-search/park-search.component';
-
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    NgbCarouselModule,
     NgxMapboxGLModule.withConfig({
       accessToken: 'pk.eyJ1IjoiYXVzdGluYmhvZGdlIiwiYSI6ImNqc3Z4ZWY2cTBiczc0NG1tcDZveGRoa2EifQ.zO6DBSpZws2QVvlMNdBX-g'
     }),
@@ -35,10 +29,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     ParkMapLayoutComponent,
     ParkMapListComponent,
     ParkDetailComponent,
-    ParkListCardComponent,
-    ParkFilterComponent,
-    ParkImgViewerComponent,
-    ParkSearchComponent
+    ParkListCardComponent
   ],
   providers: [
     ParkMapResolve,

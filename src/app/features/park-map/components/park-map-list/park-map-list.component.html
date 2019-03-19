@@ -1,12 +1,3 @@
-
-
-<div *ngIf="state.$activePark | async" fxLayout="row wrap">
-  <app-park-list-card fxFlex="100" class="park-list-item" [park]="state.$activePark | async"></app-park-list-card>
-  <app-park-img-viewer fxFlex="100" [parkImages]="(state.$activePark | async).images"></app-park-img-viewer>
-</div>
-
-<div *ngIf="!(state.$activePark | async)">
-  <div *ngFor="let park of parkList" class="park-list-item">
-    <app-park-list-card [park]="park"></app-park-list-card>
-  </div>
+<div *ngFor="let park of parkList" [ngClass]="{'park-list-item': true, 'active': (state.$activePark | async) === park}">
+  <app-park-list-card class="animated fadeInLeft" [park]="park"></app-park-list-card>
 </div>

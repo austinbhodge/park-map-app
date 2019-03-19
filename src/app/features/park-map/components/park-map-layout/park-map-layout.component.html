@@ -2,13 +2,18 @@
   <div fxLayout="row" fxFlex="100" fxFlex.lt-sm="40">
       <div fxLayout="column" fxFlex="70" fxFlex.lt-sm="100">
         <app-park-map fxFlex="100" [parkPins]="state.$parkPins | async"></app-park-map>
-        <app-park-detail class="animated fadeInUp" fxFlex="30" fxFlex.lt-sm="60" *ngIf="state.$activePark | async"></app-park-detail>
+        <app-park-detail fxFlex="30" fxHide.lt-sm fxFlex.lt-sm="100" *ngIf="state.$activePark | async"></app-park-detail>
       </div> 
 
       <app-park-map-list fxFlex="30" fxHide.lt-sm [parkList]="state.$renderedParkList | async"></app-park-map-list>
   </div>
 
-  <div fxLayout="row" fxHide.gt-xs  fxFlex.lt-sm="60">
+  
+  <div fxLayout="row" fxHide.gt-xs  fxFlex.lt-sm="60" *ngIf="state.$activePark | async">
+    <app-park-detail fxFlex="100" *ngIf="state.$activePark | async"></app-park-detail>
+  </div>
+
+  <div fxLayout="row" style="overflow-y:scroll;" fxHide.gt-xs  fxFlex.lt-sm="60" *ngIf="!(state.$activePark | async)">
       <app-park-map-list fxFlex="100" [parkList]="state.$renderedParkList | async"></app-park-map-list>
   </div>
 

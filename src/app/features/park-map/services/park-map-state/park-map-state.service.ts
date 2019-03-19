@@ -67,29 +67,30 @@ export class ParkMapStateService extends StateService {
       return mapPins;
     }));
 
-    $renderedParkList = of([]);
+  $renderedParkList = of([]);
 
   constructor(private npsDataSvc: NpsParkDataService) {
     super();
 
     this.$mapBounds.subscribe(bounds => {
-    this.$renderedParkList =  this.parkList
-    .pipe(map(parks => {
-      const parkMap = [];
-      for (const park of parks) {
-        if (bounds) {
-          if (this.checkIfInBounds(park, bounds)) {
-
-            parkMap.push(park);
+      this.$renderedParkList =  this.parkList
+      .pipe(map(parks => {
+        const parkMap = [];
+        for (const park of parks) {
+          if (bounds) {
+            if (this.checkIfInBounds(park, bounds)) {
+              parkMap.push(park);
+            }
           }
         }
-      }
 
-      return parkMap;
-    }));
+        return parkMap;
+      }));
     });
   }
 
+  // I understand this can be optimized way more by using geometry to only calculate the change in bounds, among other things.
+  // I beleive it would make a good final interview question.
   checkIfInBounds(park, bounds) {
     const neLat = bounds._ne.lat;
     const neLng = bounds._ne.lng;

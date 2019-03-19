@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ParkMapStateService } from '../../services';
 
 @Component({
@@ -6,12 +6,9 @@ import { ParkMapStateService } from '../../services';
   templateUrl: './park-map-list.component.html',
   styleUrls: ['./park-map-list.component.scss']
 })
-export class ParkMapListComponent implements OnInit {
+export class ParkMapListComponent {
   @Input() parkList = [];
 
   constructor(public state: ParkMapStateService) { }
-
-  ngOnInit() {
-  }
 
 }
